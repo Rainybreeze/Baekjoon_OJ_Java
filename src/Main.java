@@ -1,6 +1,6 @@
 
 public class Main {
     public static void main(String[] args){
-        Question20492 question = new Question20492();
+        Question20493 question = new Question20493();
     }
 }
