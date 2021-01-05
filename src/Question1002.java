@@ -34,16 +34,17 @@ class Question1002 {
             int y2 = in.nextInt();
             int r2 = in.nextInt();
 
-            double dotsDistance = Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
-            double isTriangle = r1+r2;
-
-            if(isTriangle > dotsDistance) result[i] = 2;
-            else if(isTriangle == dotsDistance) result[i] = 1;
-            else if(isTriangle < dotsDistance) result[i] = 0;
-            else result[i] = -1;
+            int dotsDistance = (int)Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
+            if(dotsDistance < Math.abs(r2-r1)) result[i] = 0;
+            else{
+                if(dotsDistance == (r1+r2))result[i] = 1;
+                else if(dotsDistance < (r1+r2)) result[i] = 2;
+                else result[i] = -1;
+            }
         }
-        for(int i=0; i < result.length; i++){
-            System.out.println(result[i]);
+        for (int i=0; i < result.length; i++) {
+            if(i == result.length-1)System.out.print(result[i]);
+            else System.out.println(result[i]);
         }
     }
 }
